@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pr-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário</title>
+    <link rel="stylesheet" href="/estilo.css">
 </head>
 <body>
+    <section>
+        <h1>Formulário de cadastro</h1>
+        <ul> 
+            <li>Nenhum campo pode estar vazio</li>
+            <li>Usuario so podera conter letra e/ou numeros</li>
+            <li>Usuario devera ter entre 3 e 12 caracteres</li>
+            <li>Senha precisa ter ente 6 e 12 caracteres</li>
+            <li>Senha deve ser iguais</li>
+            <li>Mostrar todas mensagens de erro</li>
+        </ul>
+        
+        <form action="/" method="POST" class="formulario">
+            <label>Nome</label>  
+            <input type="text" class="nome">  
+            <label>Sobrenome</label>  
+            <input type="text" class="sobrenome">  
+            <label>CPF</label>  
+            <input type="text" class="cpf">  
+            <label>Usuário</label>  
+            <input type="text" class="usuario">  
+            <label>Senha</label>  
+            <input type="text" class="senha">  
+            <label>Repetir a senha</label>  
+            <input type="text" class="repetir-senha">  
+            <button type="submit">Enviar</button>
+        </form>
     
+        <footer>
+        <p>&copy;JulioCesar</p>
+    </footer>  
+    <script src="/script.js"></script>
 </body>
 </html>
