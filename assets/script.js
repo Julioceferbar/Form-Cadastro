@@ -26,14 +26,34 @@ class ValidaFormulario {
       const label = campo.previousElementSibling.innerText;
 
       if (!campo.value) {
-        this.criaErro(campo, `Campo'${label}' não pode estar em branco.`);
+        this.criaErro(campo, `Campo${label} não pode estar em branco.`);
         valid = false;
       }
 
       if (campo.classList.contains("cpf")) {
         if (!this.validaCPF(campo)) valid = false;
       }
+
+      if (campo.classList.contains("usuario")) {
+        if (!this.validaUsuario(campo)) valid = false;
+      }
     }
+  }
+
+  validaUsuario(campo) {
+    const usuario = campo.value;
+    let valid = true;
+
+    if(usuario.length < 3 || usuario.length > 12) {
+      this.criaErro(campo, "Usuario devera ter entre 3 e 12 caracteres.");
+      valid = false;
+    }
+
+    if(usuario.match(/^[a-zA-Z0-9]+$/g)) {
+      this.criaErro(campo, "Nome de usuário deve conter somente letras e/ou numeros.");
+      valid = false;
+    }
+    return valid;
   }
   validaCPF(campo) {
     const cpf = new ValidaCPF(cpf.value);
